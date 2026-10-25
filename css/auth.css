@@ -1,0 +1,389 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --pink: #f3a5cb;
+  --light-pink: #fff0f7;
+  --deep-pink: #d94f96;
+  --black: #171117;
+  --muted: #806d79;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--black);
+  background:
+    radial-gradient(ellipse at 15% 15%, #ffe0ef 0, transparent 42%),
+    radial-gradient(ellipse at 85% 85%, #f5c0dc 0, transparent 40%),
+    #fff7fb;
+}
+
+.auth-page {
+  min-height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  color: var(--black);
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+}
+
+.back-link:hover {
+  color: var(--deep-pink);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 48px 42px;
+  background: rgba(255, 255, 255, 0.91);
+  border: 1px solid #f3d7e6;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(100, 35, 72, 0.10);
+}
+
+.brand-name {
+  margin: 0 0 38px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--deep-pink);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 6vw, 39px);
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+
+.intro {
+  margin: 12px 0 32px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form > label {
+  margin: 0 0 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"],
+#login-form input[type="text"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #e8d7e1;
+  border-radius: 4px;
+  outline: none;
+  background: #fffafd;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#login-form input:focus {
+  border-color: var(--deep-pink);
+  box-shadow: 0 0 0 3px rgba(217, 79, 150, 0.12);
+}
+
+#login-form input::placeholder {
+  color: #b7a6b0;
+}
+
+.password-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.password-wrap input {
+  padding-right: 65px !important;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--deep-pink);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  font-size: 10px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+}
+
+.remember-label input {
+  accent-color: var(--deep-pink);
+}
+
+.form-options a,
+.signup-prompt a {
+  color: var(--deep-pink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.form-options a:hover,
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+.auth-button {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #f7c6e0;
+  border-radius: 4px;
+  color: #fff;
+  background: linear-gradient(110deg, #d94f96, #ef8cbd, #d94f96);
+  background-size: 200% 100%;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-position 0.4s, transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-button:hover {
+  background-position: 100% 0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 79, 150, 0.24);
+}
+
+.auth-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#auth-message {
+  min-height: 18px;
+  margin: 14px 0 0;
+  color: var(--deep-pink);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.signup-prompt {
+  margin: 24px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.secure-note {
+  margin: 32px 0 0;
+  text-align: center;
+  color: #b39aa9;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 80px 16px 30px;
+  }
+
+  .back-link {
+    top: 25px;
+    left: 20px;
+  }
+
+  .auth-card {
+    padding: 36px 24px;
+  }
+
+  .brand-name {
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Pink Doll Society luxury input redesign */
+
+#login-form input[type="email"],
+#login-form input[type="password"],
+#login-form input[type="text"],
+#signup-form input[type="email"],
+#signup-form input[type="password"],
+#signup-form input[type="text"] {
+  width: 100%;
+  height: 54px;
+  padding: 0 17px;
+  border: 1px solid #f0cadd;
+  border-radius: 8px;
+  background: #fff7fb;
+  color: #28151f;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(100, 35, 72, 0.025);
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+#login-form input::placeholder,
+#signup-form input::placeholder {
+  color: #bd9eaf;
+  opacity: 1;
+}
+
+#login-form input:focus,
+#signup-form input:focus {
+  border-color: #dc6ba6;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(220, 107, 166, 0.12);
+}
+
+#signup-form label,
+#login-form > label {
+  display: block;
+  margin-top: 17px;
+  margin-bottom: 9px;
+  color: #49313e;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#signup-form input:focus-visible,
+#login-form input:focus-visible {
+  outline: none;
+}
+
+#signup-form input[type="text"],
+#signup-form input[type="email"],
+#signup-form input[type="password"] {
+  margin-bottom: 2px;
+}
+
+#signup-form .password-wrap {
+  margin-bottom: 2px;
+}
+
+.password-wrap input {
+  padding-right: 65px !important;
+}
+
+/* Customer account page */
+
+.account-label {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  color: #a37d92;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.customer-email {
+  margin: 0 0 24px;
+  color: #49313e;
+  font-size: 14px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.account-shop-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.sign-out-button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #e8d7e1;
+  border-radius: 4px;
+  background: #fff;
+  color: #49313e;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.sign-out-button:hover {
+  border-color: #d94f96;
+  color: #d94f96;
+}
+
+.sign-out-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#account-message {
+  color: #d94f96;
+  font-size: 12px;
+  text-align: center;
+}

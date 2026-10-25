@@ -1,0 +1,682 @@
+
+:root {
+  --pds-pink: #f5a8ce;
+  --pds-hot-pink: #ed5ba4;
+  --pds-light: #fff4f9;
+  --pds-black: #21151d;
+  --pds-muted: #796671;
+}
+
+.shop-page {
+  min-height: 100vh;
+  background: var(--pds-light);
+  color: var(--pds-black);
+}
+
+.shop-header {
+  min-height: 88px;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #fff;
+  border-bottom: 1px solid #f2dce7;
+}
+
+.shop-logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.shop-logo span {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.shop-header nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.shop-header nav a {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.shop-header nav a:hover {
+  color: var(--pds-hot-pink);
+}
+
+.shop-hero {
+  padding: 88px 20px 80px;
+  text-align: center;
+  background: #f9d6e8;
+}
+
+.shop-eyebrow {
+  color: #a63c74;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.shop-hero h1 {
+  margin: 18px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 500;
+}
+
+.shop-hero h1 span {
+  color: #c84087;
+  font-style: italic;
+}
+
+.shop-hero > p:last-child {
+  color: #674c5b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.collection-section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 70px 6% 90px;
+}
+
+.collection-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.collection-heading h2 {
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 500;
+}
+
+#product-total {
+  color: var(--pds-muted);
+  font-size: 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #f3dce7;
+}
+
+.product-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.04);
+}
+
+.product-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #48243a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.product-info {
+  padding: 18px 0 0;
+}
+
+.product-category {
+  color: var(--pds-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.product-info h3 {
+  margin-top: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.product-description {
+  min-height: 40px;
+  margin-top: 8px;
+  color: var(--pds-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.product-price {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.product-length-label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.product-length {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #e4cbd8;
+  border-radius: 0;
+  background: #fff;
+  color: var(--pds-black);
+  font: inherit;
+  font-size: 12px;
+}
+
+.add-to-bag {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 12px;
+  border: 1px solid var(--pds-black);
+  background: var(--pds-black);
+  color: #fff;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.add-to-bag:hover {
+  background: var(--pds-pink);
+  border-color: var(--pds-pink);
+  color: var(--pds-black);
+}
+
+.add-to-bag:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.price-notice {
+  margin-top: 30px;
+  color: var(--pds-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.loading-message {
+  color: var(--pds-muted);
+}
+
+.shop-footer {
+  padding: 40px 20px;
+  background: var(--pds-black);
+  color: white;
+  text-align: center;
+}
+
+.shop-footer p {
+  margin-top: 12px;
+  color: #ddcbd5;
+  font-size: 11px;
+}
+
+.cart-toast {
+  position: fixed;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  max-width: calc(100vw - 40px);
+  padding: 16px 22px;
+  background: var(--pds-black);
+  color: white;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cart-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-header {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+  }
+
+  .shop-header nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .shop-header nav a {
+    font-size: 9px;
+  }
+
+  .shop-hero {
+    padding: 65px 18px;
+  }
+
+  .collection-section {
+    padding: 48px 5% 65px;
+  }
+
+  .collection-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .product-info h3 {
+    font-size: 26px;
+  }
+}
+
+/* PINK DOLL SOCIETY COLLECTION TOOLBAR */
+
+.collection-intro {
+  margin-bottom: 30px;
+}
+
+.collection-intro h2 {
+  margin: 8px 0 12px;
+  color: #33212c;
+  font-size: clamp(26px, 3vw, 36px);
+}
+
+.collection-description {
+  max-width: 600px;
+  color: #8b7581;
+  line-height: 1.7;
+}
+
+.product-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 25px 0 32px;
+  padding: 26px;
+  border: 1px solid #f3dce8;
+  border-radius: 18px;
+  background: #fff7fb;
+}
+
+.product-search-control,
+.texture-control {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.product-search-control > label,
+.texture-control > label {
+  color: #6d5361;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid #edc9dc;
+  border-radius: 30px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.search-field:focus-within {
+  border-color: #d66d9f;
+  box-shadow: 0 0 0 3px rgba(214, 109, 159, 0.12);
+}
+
+.search-icon {
+  color: #c26d99;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.search-field input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #33212c;
+  font: inherit;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.search-field input:focus {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-field input::placeholder {
+  color: #a08b96;
+}
+
+.texture-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.texture-button {
+  padding: 11px 19px;
+  border: 1px solid #edc9dc;
+  border-radius: 30px;
+  background: #fff;
+  color: #6d5361;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.texture-button:hover {
+  border-color: #d66d9f;
+  color: #b65c88;
+}
+
+.texture-button.active {
+  border-color: #d66d9f;
+  background: #d66d9f;
+  color: #fff;
+}
+
+.texture-button:focus-visible {
+  outline: 2px solid #a84478;
+  outline-offset: 3px;
+}
+
+.collection-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #f0dce6;
+}
+
+#product-total {
+  margin: 0;
+  color: #8b7581;
+  font-size: 13px;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6d5361;
+  font-size: 13px;
+}
+
+.sort-control select {
+  max-width: 190px;
+  padding: 8px 25px 8px 8px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #33212c;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Accessible hidden select remains available to JavaScript */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 768px) {
+  .product-toolbar {
+    padding: 22px 18px;
+    gap: 23px;
+  }
+
+  .texture-options {
+    gap: 8px;
+  }
+
+  .texture-button {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-toolbar {
+    padding: 18px 14px;
+    gap: 22px;
+    border-radius: 14px;
+  }
+
+  .texture-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .texture-button {
+    width: 100%;
+    padding: 11px 6px;
+  }
+
+  .collection-bottom-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sort-control {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* =========================================
+   PINK DOLL STANDARD BRAND SECTION
+========================================= */
+
+.shop-brand-message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 70px 0 0;
+  padding: 85px 24px;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #fff7fb 0%,
+    #fce8f1 55%,
+    #fff2f8 100%
+  );
+  border-top: 1px solid #f5dce8;
+  border-bottom: 1px solid #f5dce8;
+}
+
+.brand-eyebrow {
+  margin: 0;
+  color: #b65c88;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.6;
+}
+
+.shop-brand-message h2 {
+  max-width: 800px;
+  margin: 0;
+  color: #33212c;
+  font-family: inherit;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.shop-brand-message h2 span {
+  color: #d66d9f;
+}
+
+.brand-message-description {
+  max-width: 540px;
+  margin: 0;
+  color: #806b77;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.brand-story-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 16px 28px;
+  border: 1px solid #d66d9f;
+  border-radius: 4px;
+  background: #d66d9f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.brand-story-link span {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+
+.brand-story-link:hover {
+  background: #fff;
+  color: #b65c88;
+  transform: translateY(-2px);
+}
+
+.brand-story-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+.brand-story-link:focus-visible {
+  outline: 2px solid #a84478;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .shop-brand-message {
+    gap: 17px;
+    margin-top: 45px;
+    padding: 58px 20px;
+  }
+
+  .brand-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .shop-brand-message h2 {
+    font-size: 34px;
+    letter-spacing: -0.8px;
+  }
+
+  .brand-message-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .brand-story-link {
+    width: 100%;
+    max-width: 290px;
+    box-sizing: border-box;
+    padding: 15px 16px;
+  }
+}

@@ -1,0 +1,991 @@
+/* =========================================
+   PINK DOLL SOCIETY
+   Main Landing Page Stylesheet
+========================================= */
+
+/* GLOBAL RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ffb6d9;
+  --light-pink: #ffe1ef;
+  --hot-pink: #ff4fa3;
+  --deep-pink: #e82e88;
+  --white: #ffffff;
+  --black: #111111;
+  --soft-black: #191319;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* LANDING PAGE */
+
+.landing-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 30px 6%;
+  overflow: hidden;
+  background: var(--soft-black);
+}
+
+/* CINEMATIC BACKGROUND VIDEO */
+
+.landing-video {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+/* VIDEO OVERLAY */
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 5, 12, 0.68) 0%,
+      rgba(15, 5, 12, 0.30) 55%,
+      rgba(15, 5, 12, 0.14) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(15, 5, 12, 0.48) 0%,
+      transparent 35%,
+      rgba(15, 5, 12, 0.18) 100%
+    );
+  pointer-events: none;
+}
+
+/* HEADER */
+
+.landing-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+/* LARGER LOGO CONTAINER */
+
+.landing-header .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 320px;
+  max-width: 60%;
+  text-decoration: none;
+}
+
+/* LARGER LOGO IMAGE */
+
+.landing-header .logo img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  max-height: 150px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* SHOPPING BAG */
+
+.bag-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 2px;
+  background: rgba(20, 10, 17, 0.24);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.bag-link span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 23px;
+  height: 23px;
+  padding: 0 6px;
+  border-radius: 50%;
+  background: var(--hot-pink);
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.bag-link:hover {
+  background: var(--hot-pink);
+  border-color: var(--hot-pink);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* MAIN HERO CONTENT */
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 100px 0 110px;
+  animation: heroFadeIn 1s ease both;
+}
+
+/* EYEBROW TEXT */
+
+.eyebrow {
+  margin-bottom: 24px;
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.8;
+}
+
+/* MAIN HEADING */
+
+.landing-content h1 {
+  max-width: 760px;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6.5vw, 88px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  text-wrap: balance;
+}
+
+.landing-content h1 span {
+  display: block;
+  margin-top: 8px;
+  color: var(--pink);
+  font-style: italic;
+}
+
+/* TAGLINE */
+
+.tagline {
+  max-width: 500px;
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+/* ENTER THE SOCIETY BUTTON */
+
+.shop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 56px;
+  margin-top: 36px;
+  padding: 17px 27px;
+  border: 1px solid var(--hot-pink);
+  border-radius: 2px;
+  background: var(--hot-pink);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.shop-button span {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.shop-button:hover {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--deep-pink);
+  box-shadow: 0 8px 30px rgba(255, 79, 163, 0.22);
+  transform: translateY(-3px);
+}
+
+.shop-button:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.shop-button:focus-visible,
+.bag-link:focus-visible,
+.landing-header .logo:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 5px;
+}
+
+/* FOOTER */
+
+.landing-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+/* ENTRANCE ANIMATION */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .landing-page {
+    padding: 25px 5%;
+  }
+
+  .landing-header .logo {
+    width: 240px;
+    max-width: 58%;
+  }
+
+  .landing-header .logo img {
+    max-height: 115px;
+  }
+
+  .bag-link {
+    gap: 8px;
+    padding: 11px 12px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .landing-content {
+    max-width: 600px;
+    padding: 85px 0;
+  }
+
+  .landing-content h1 {
+    font-size: clamp(42px, 8vw, 66px);
+    letter-spacing: -1.5px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+  }
+
+  .landing-footer {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .video-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(15, 5, 12, 0.65),
+        rgba(15, 5, 12, 0.25)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(15, 5, 12, 0.55),
+        transparent 75%
+      );
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .landing-page {
+    padding: 20px 6%;
+  }
+
+  .landing-header {
+    gap: 12px;
+  }
+
+  .landing-header .logo {
+    width: 190px;
+    max-width: 58%;
+  }
+
+  .landing-header .logo img {
+    max-height: 90px;
+  }
+
+  .bag-link {
+    gap: 7px;
+    padding: 9px 10px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .bag-link span {
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .landing-content {
+    padding: 75px 0;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  .landing-content h1 {
+    font-size: clamp(37px, 10vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .landing-content h1 span {
+    margin-top: 6px;
+  }
+
+  .tagline {
+    margin-top: 19px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .shop-button {
+    min-height: 52px;
+    gap: 20px;
+    margin-top: 28px;
+    padding: 15px 19px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .landing-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 15px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Customer Account Header Link */
+.account-link {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.account-link:hover {
+  color: #ffb6d9;
+}
+
+/* Keep header items aligned */
+.landing-header {
+  display: flex;
+  align-items: center;
+}
+
+/* ===================================
+   PINK DOLL SOCIETY SOCIAL SHOWCASE
+=================================== */
+
+.social-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 90px 8%;
+  min-height: 750px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff7fb, #fce1ef, #fff);
+  color: #34202b;
+  font-family: Arial, sans-serif;
+}
+
+.social-copy {
+  max-width: 420px;
+}
+
+.social-eyebrow {
+  color: #cc4e8d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.social-copy h2 {
+  margin: 18px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.12;
+}
+
+.social-copy h2 span {
+  color: #d84f98;
+  font-style: italic;
+}
+
+.social-copy > p:not(.social-eyebrow) {
+  color: #765969;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.social-shop-button {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 16px 22px;
+  background: #d94f96;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.social-shop-button:hover {
+  background: #b92f76;
+  transform: translateY(-3px);
+}
+
+.phone-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.social-phone {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  padding: 10px;
+  border: 3px solid #e9c6d8;
+  border-radius: 43px;
+  background: #211a20;
+  box-shadow: 0 30px 70px rgba(105, 43, 77, 0.25);
+  transform: rotate(3deg);
+  transition: transform 0.4s ease;
+}
+
+.social-phone:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.phone-island {
+  position: absolute;
+  z-index: 5;
+  top: 15px;
+  left: 50%;
+  width: 90px;
+  height: 20px;
+  border-radius: 20px;
+  background: #211a20;
+  transform: translateX(-50%);
+}
+
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 33px;
+  background: #fff;
+  color: #30222b;
+}
+
+.social-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 17px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.insta-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 12px;
+  border-bottom: 1px solid #f4e8ee;
+}
+
+.insta-wordmark {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.insta-profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 12px 10px;
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  border: 3px solid #e75c9e;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f9c7e0, #d94f96);
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.profile-stats {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.profile-stats strong,
+.profile-stats small {
+  display: block;
+}
+
+.profile-stats strong {
+  font-size: 12px;
+}
+
+.profile-stats small {
+  margin-top: 4px;
+  font-size: 9px;
+}
+
+.profile-bio {
+  padding: 4px 13px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.profile-bio p {
+  margin: 3px 0;
+}
+
+.profile-bio span {
+  color: #c43d82;
+}
+
+.insta-follow {
+  display: block;
+  width: calc(100% - 26px);
+  margin: 10px 13px;
+  padding: 9px;
+  border: 0;
+  border-radius: 6px;
+  background: #d94f96;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.story-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.story-row > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.story-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border: 2px solid #e7a1c5;
+  border-radius: 50%;
+  background: #fff1f8;
+  color: #ce438a;
+  font-size: 19px;
+}
+
+.story-row small {
+  font-size: 8px;
+}
+
+.insta-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 9px;
+  border-top: 1px solid #f3e6ed;
+  color: #d94f96;
+  font-size: 17px;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.insta-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  aspect-ratio: 0.72;
+  gap: 5px;
+  padding: 7px 3px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+}
+
+.insta-photo span {
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.insta-photo small {
+  font-size: 9px;
+}
+
+.photo-straight {
+  background: linear-gradient(160deg, #f2b8d5, #a04b76 60%, #35212d);
+}
+
+.photo-wave {
+  background: linear-gradient(160deg, #f9dbe9, #cb7da5 55%, #62344d);
+}
+
+.photo-baddie {
+  background: linear-gradient(160deg, #f5c6df, #ad527f 55%, #281b25);
+}
+
+.insta-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 13px 5px;
+  font-size: 17px;
+}
+
+.floating-heart {
+  position: absolute;
+  z-index: 3;
+  color: #e84c98;
+  font-size: 44px;
+  filter: drop-shadow(0 8px 12px rgba(217, 79, 150, 0.2));
+  animation: dollHeartFloat 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.heart-one {
+  top: 13%;
+  right: -8px;
+}
+
+.heart-two {
+  bottom: 20%;
+  left: -20px;
+  font-size: 31px;
+  animation-delay: 0.8s;
+}
+
+.heart-three {
+  top: 45%;
+  right: -25px;
+  font-size: 24px;
+  animation-delay: 1.5s;
+}
+
+@keyframes dollHeartFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg) scale(1);
+  }
+  50% {
+    transform: translateY(-17px) rotate(8deg) scale(1.12);
+  }
+}
+
+@media (max-width: 760px) {
+  .social-showcase {
+    flex-direction: column;
+    gap: 35px;
+    padding: 65px 18px;
+    text-align: center;
+  }
+
+  .social-copy {
+    max-width: 100%;
+  }
+
+  .social-phone {
+    width: min(290px, 78vw);
+  }
+
+  .phone-stage {
+    padding: 15px;
+  }
+
+  .heart-one {
+    right: -1px;
+  }
+
+  .heart-two {
+    left: -5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-heart {
+    animation: none;
+  }
+
+  .social-phone,
+  .social-shop-button {
+    transition: none;
+  }
+}
+/* Keep the cinematic video in its own section */
+.landing-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Keep the video behind the landing-page content */
+.landing-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Keep the social showcase below the cinematic landing page */
+.social-showcase {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  clear: both;
+}
+/* Pink Doll Society Main Footer */
+.site-footer {
+  position: relative;
+  padding: 60px 8% 24px;
+  background: #261923;
+  color: #fff7fb;
+  font-family: Arial, sans-serif;
+}
+
+.footer-brand {
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  color: #f6b8d6;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.footer-brand p {
+  color: #eadce5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-tagline {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f6b8d6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  padding-bottom: 35px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer-column h3 {
+  margin-bottom: 8px;
+  color: #f6b8d6;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.footer-column a {
+  color: #eadce5;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #f6b8d6;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbb9c5;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 45px 6% 20px;
+  }
+
+  .footer-links {
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
