@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Back, Doll | Pink Doll Society</title>
+  <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+  <main class="auth-page">
+    <a class="back-link" href="./index.html">← Back to the Dollhouse</a>
+
+    <section class="auth-card">
+      <p class="brand-name">PINK DOLL SOCIETY</p>
+      <p class="eyebrow">THE SOCIETY WELCOMES YOU BACK</p>
+      <h1>Welcome Back, Doll.</h1>
+      <p class="intro">Your next hair obsession is waiting.</p>
+
+      <form id="login-form">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+          <button type="button" id="toggle-password"
+            class="toggle-password">Show</button>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-label">
+            <input type="checkbox" id="remember">
+            Remember me
+          </label>
+          <a href="#" id="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="auth-button">SIGN IN ♛</button>
+        <p id="auth-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="signup-prompt">
+        New to the Society?
+        <a href="./signup.html">Create an account</a>
+      </p>
+      <p class="secure-note">YOUR DOLL ERA. YOUR ACCOUNT.</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { supabase } from './js/auth.js';
+
+    const form = document.getElementById('login-form');
+    const message = document.getElementById('auth-message');
+    const password = document.getElementById('password');
+    const toggle = document.getElementById('toggle-password');
+
+    toggle.addEventListener('click', () => {
+      const showing = password.type === 'text';
+      password.type = showing ? 'password' : 'text';
+      toggle.textContent = showing ? 'Show' : 'Hide';
+    });
+
+    document.getElementById('forgot-password').addEventListener('click', async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+
+      if (!email) {
+        message.textContent = 'Enter your email address first.';
+        return;
+      }
+
+      message.textContent = 'Sending password reset email...';
+
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + window.location.pathname.replace('login.html', 'account.html')
+      });
+
+      message.textContent = error
+        ? error.message
+        : 'If an account exists for that email, a password reset email will be sent.';
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const passwordValue = password.value;
+
+      message.textContent = 'Signing you in...';
+
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password: passwordValue
+      });
+
+      if (error) {
+        message.textContent = 'Sign-in failed. Check your email and password, then try again.';
+        return;
+      }
+
+      window.location.href = './account.html';
+    });
+  </script>
+</body>
+</html>

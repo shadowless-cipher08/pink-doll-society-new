@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enter the Society | Pink Doll Society</title>
+    <meta name="description" content="Discover Pink Doll Society, where luxury hair meets unapologetic doll energy.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .society-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fff7fb, #f5c9df, #fff);
+            color: #30202a;
+            font-family: Arial, sans-serif;
+        }
+
+        .society-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px 7%;
+        }
+
+        .society-nav a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .society-hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 24px;
+            text-align: center;
+        }
+
+        .society-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .society-hero h1 {
+            max-width: 900px;
+            margin: 20px 0;
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 8vw, 94px);
+            font-weight: 400;
+            line-height: 1.05;
+        }
+
+        .society-hero h1 span {
+            display: block;
+            color: #c04e87;
+            font-style: italic;
+        }
+
+        .society-description {
+            max-width: 580px;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .society-button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 17px 30px;
+            background: #292029;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .society-button:hover {
+            background: #c04e87;
+            transform: translateY(-3px);
+        }
+
+        .society-values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 50px 7% 80px;
+            text-align: center;
+        }
+
+        .society-value {
+            padding: 30px 20px;
+            border-top: 1px solid #dba6c2;
+        }
+
+        .society-value h2 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .society-value p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 650px) {
+            .society-values {
+                grid-template-columns: 1fr;
+            }
+
+            .society-nav {
+                padding: 20px;
+            }
+
+            .society-hero {
+                min-height: 65vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="society-page">
+
+    <nav class="society-nav">
+        <a href="index.html">PINK DOLL SOCIETY</a>
+        <a href="cart.html">SHOPPING BAG ↗</a>
+    </nav>
+
+    <main>
+
+        <section class="society-hero">
+            <p class="society-eyebrow">Your invitation starts here</p>
+
+            <h1>
+                Not just hair.
+                <span>A whole doll era.</span>
+            </h1>
+
+            <p class="society-description">
+                Welcome to Pink Doll Society, where statement hair,
+                feminine luxury, and main-character energy belong together.
+                This is your space to show up, stand out, and wear your
+                confidence like a crown.
+            </p>
+
+            <a class="society-button" href="products.html">
+                DISCOVER THE COLLECTION ↗
+            </a>
+        </section>
+
+        <section class="society-values">
+
+            <article class="society-value">
+                <h2>The Look</h2>
+                <p>Hair made for the entrance, the pictures, and everything after.</p>
+            </article>
+
+            <article class="society-value">
+                <h2>The Energy</h2>
+                <p>Confident, feminine, unapologetic. The doll never has to blend in.</p>
+            </article>
+
+            <article class="society-value">
+                <h2>The Society</h2>
+                <p>A beauty destination for the woman who knows her presence matters.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

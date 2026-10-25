@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Pink Doll Society</title>
+  <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+  <main class="auth-page">
+    <a class="back-link" href="./index.html">← Back to the Dollhouse</a>
+
+    <section class="auth-card">
+      <p class="brand-name">PINK DOLL SOCIETY</p>
+      <p class="eyebrow">YOUR PRIVATE BEAUTY SPACE</p>
+      <h1 id="welcome-heading">Welcome, Doll.</h1>
+      <p class="intro">Your Society account is ready.</p>
+
+      <div id="account-details">
+        <p class="account-label">SIGNED IN AS</p>
+        <p id="customer-email" class="customer-email">Checking your account...</p>
+        <p id="account-message" role="status" aria-live="polite"></p>
+
+        <a href="./products.html" class="auth-button account-shop-link">
+          SHOP THE COLLECTION ♛
+        </a>
+
+        <button id="sign-out" type="button" class="sign-out-button">
+          SIGN OUT
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { supabase } from './js/auth.js';
+
+    const heading = document.getElementById('welcome-heading');
+    const emailElement = document.getElementById('customer-email');
+    const message = document.getElementById('account-message');
+    const signOutButton = document.getElementById('sign-out');
+
+    async function loadAccount() {
+      const { data, error } = await supabase.auth.getUser();
+
+      if (error || !data.user) {
+        window.location.replace('./login.html');
+        return;
+      }
+
+      const user = data.user;
+      const fullName = user.user_metadata?.full_name;
+
+      if (fullName) {
+        heading.textContent = `Welcome, ${fullName}.`;
+      }
+
+      emailElement.textContent = user.email || 'Email unavailable';
+    }
+
+    signOutButton.addEventListener('click', async () => {
+      signOutButton.disabled = true;
+      message.textContent = 'Signing you out...';
+
+      const { error } = await supabase.auth.signOut();
+
+      if (error) {
+        message.textContent = 'We could not sign you out. Please try again.';
+        signOutButton.disabled = false;
+        return;
+      }
+
+      window.location.replace('./login.html');
+    });
+
+    loadAccount();
+  </script>
+</body>
+</html>

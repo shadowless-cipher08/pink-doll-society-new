@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shipping & Returns | Pink Doll Society</title>
+  <meta
+    name="description"
+    content="Review Pink Doll Society shipping, order processing, delivery, and return information."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --pink: #f5a9cd;
+      --light-pink: #fff0f7;
+      --dark: #291a25;
+      --text: #654e5d;
+      --white: #ffffff;
+      --border: #f0d9e5;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffafd;
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shipping-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 7%;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .shipping-logo {
+      color: #b94e85;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .shipping-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 13px;
+    }
+
+    .shipping-nav-links a:hover {
+      color: #c84e8e;
+    }
+
+    .shipping-hero {
+      padding: 85px 20px 75px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 15% 20%, #fff 0, transparent 25%),
+        linear-gradient(135deg, #fff0f7, #f8c6df, #fce9f3);
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+      color: #a34274;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .shipping-hero h1 {
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 7vw, 68px);
+      font-weight: normal;
+      line-height: 1.15;
+    }
+
+    .shipping-hero p {
+      max-width: 550px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .shipping-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 22px 85px;
+    }
+
+    .policy-notice {
+      margin-bottom: 35px;
+      padding: 20px 22px;
+      border: 1px solid #e7a9c9;
+      border-radius: 12px;
+      background: var(--light-pink);
+      color: #6e3b55;
+      font-size: 13px;
+    }
+
+    .policy-notice strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #a34274;
+    }
+
+    .shipping-card {
+      margin-bottom: 18px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    .shipping-card h2 {
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+      font-size: 27px;
+      font-weight: normal;
+    }
+
+    .shipping-card p {
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .shipping-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .shipping-card ul {
+      padding-left: 22px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .shipping-card li {
+      margin-bottom: 8px;
+    }
+
+    .policy-placeholder {
+      color: #a34274;
+      font-weight: bold;
+    }
+
+    .shipping-contact {
+      margin-top: 40px;
+      padding: 38px 25px;
+      border-radius: 18px;
+      background: var(--light-pink);
+      text-align: center;
+    }
+
+    .shipping-contact h2 {
+      margin-bottom: 10px;
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .shipping-contact p {
+      margin-bottom: 22px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .shipping-button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 30px;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .shipping-button:hover {
+      background: #b3427c;
+    }
+
+    .shipping-footer {
+      padding: 30px 20px;
+      background: var(--dark);
+      color: #f9eaf2;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .shipping-footer p {
+      margin-bottom: 12px;
+    }
+
+    .shipping-footer a {
+      margin: 0 9px;
+      color: var(--pink);
+    }
+
+    @media (max-width: 600px) {
+      .shipping-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .shipping-nav-links {
+        gap: 14px;
+      }
+
+      .shipping-hero {
+        padding: 60px 20px;
+      }
+
+      .shipping-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="shipping-nav">
+    <a href="index.html" class="shipping-logo">Pink Doll Society</a>
+
+    <nav class="shipping-nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="products.html">Shop Hair</a>
+      <a href="cart.html">Shopping Bag</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="shipping-hero">
+      <div class="eyebrow">THE DELIVERY DETAILS</div>
+      <h1>Shipping &amp; Returns</h1>
+      <p>
+        The details behind getting your doll essentials from our collection
+        to your doorstep.
+      </p>
+    </section>
+
+    <section class="shipping-content">
+
+      <div class="policy-notice">
+        <strong>Store setup reminder</strong>
+        This page contains general guidance and policy placeholders.
+        Replace the highlighted setup notes with your actual business
+        terms before accepting customer orders.
+      </div>
+
+      <article class="shipping-card">
+        <h2>01. Order Processing</h2>
+        <p>
+          Orders must be successfully submitted and confirmed before
+          processing begins. Processing time is separate from shipping time.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [ADD YOUR ORDER PROCESSING TIME HERE]
+          </span>
+        </p>
+        <p>
+          If an order requires additional verification or an item becomes
+          unavailable, contact the customer using the information provided
+          with the order.
+        </p>
+      </article>
+
+      <article class="shipping-card">
+        <h2>02. Shipping &amp; Delivery</h2>
+        <p>
+          Available shipping methods, charges, and estimated delivery
+          windows should be displayed at checkout before payment is finalized.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [ADD YOUR SHIPPING DESTINATIONS AND DELIVERY ESTIMATES HERE]
+          </span>
+        </p>
+        <p>
+          Delivery estimates are not guarantees unless expressly stated
+          otherwise. Carrier delays, weather, and other events outside the
+          store's control may affect delivery.
+        </p>
+      </article>
+
+      <article class="shipping-card">
+        <h2>03. Order Tracking</h2>
+        <p>
+          When tracking is available, customers should receive instructions
+          for following their shipment through the shipping provider.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [CONFIRM HOW AND WHEN TRACKING INFORMATION WILL BE SENT]
+          </span>
+        </p>
+      </article>
+
+      <article class="shipping-card">
+        <h2>04. Returns &amp; Exchanges</h2>
+        <p>
+          Return and exchange eligibility must follow the store's published
+          policy and any applicable consumer protection requirements.
+          Hair products may have specific conditions based on hygiene,
+          product condition, and whether the item has been used.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [ADD YOUR RETURN WINDOW, ELIGIBILITY RULES, AND EXCHANGE TERMS]
+          </span>
+        </p>
+        <p>
+          Do not mail an item back until you have reviewed the official
+          instructions for requesting a return.
+        </p>
+      </article>
+
+      <article class="shipping-card">
+        <h2>05. Damaged, Missing, or Incorrect Orders</h2>
+        <p>
+          If an order arrives damaged or contains the wrong item, contact
+          customer support with your order number and a description of
+          the issue. Photographs may help document the problem.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [ADD YOUR REPORTING DEADLINE AND RESOLUTION PROCESS]
+          </span>
+        </p>
+      </article>
+
+      <article class="shipping-card">
+        <h2>06. Address Changes &amp; Cancellations</h2>
+        <p>
+          Contact customer support as soon as possible if you need to
+          correct a shipping address or request an order cancellation.
+          Changes may not be possible after an order has been processed
+          or shipped.
+        </p>
+        <p>
+          <span class="policy-placeholder">
+            [ADD YOUR ACTUAL ADDRESS-CHANGE AND CANCELLATION POLICY]
+          </span>
+        </p>
+      </article>
+
+      <div class="shipping-contact">
+        <h2>Need a Little Help?</h2>
+        <p>
+          Our contact page is the starting point for shipping and order
+          questions.
+        </p>
+        <a href="contact.html" class="shipping-button">
+          CONTACT THE SOCIETY ↗
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="shipping-footer">
+    <p>Luxury hair. Doll energy. Unforgettable entrances.</p>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-top: 18px;">
+      &copy; 2026 Pink Doll Society. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

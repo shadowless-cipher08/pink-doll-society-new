@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Society | Pink Doll Society</title>
+  <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+  <main class="auth-page">
+    <a class="back-link" href="./index.html">← Back to the Dollhouse</a>
+
+    <section class="auth-card">
+      <p class="brand-name">PINK DOLL SOCIETY</p>
+      <p class="eyebrow">YOUR EXCLUSIVE BEAUTY CLUB</p>
+      <h1>Become a Doll.</h1>
+      <p class="intro">Create your account and join the Society.</p>
+
+      <form id="signup-form">
+        <label for="full-name">Full Name</label>
+        <input
+          type="text"
+          id="full-name"
+          name="full-name"
+          placeholder="Your full name"
+          autocomplete="name"
+          required
+        >
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Create Password</label>
+        <div class="password-wrap">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="At least 8 characters"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          >
+          <button type="button" id="toggle-password"
+            class="toggle-password">Show</button>
+        </div>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          placeholder="Enter your password again"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        >
+
+        <button type="submit" class="auth-button" style="margin-top: 24px;">
+          CREATE MY ACCOUNT ♛
+        </button>
+
+        <p id="auth-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="signup-prompt">
+        Already a member?
+        <a href="./login.html">Sign in</a>
+      </p>
+
+      <p class="secure-note">YOUR DOLL ERA STARTS HERE</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { supabase } from './js/auth.js';
+
+    const form = document.getElementById('signup-form');
+    const message = document.getElementById('auth-message');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm-password');
+
+    document.getElementById('toggle-password').addEventListener('click', () => {
+      const showing = password.type === 'text';
+      password.type = showing ? 'password' : 'text';
+      confirmPassword.type = showing ? 'password' : 'text';
+      document.getElementById('toggle-password').textContent =
+        showing ? 'Show' : 'Hide';
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const fullName = document.getElementById('full-name').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (password.value.length < 8) {
+        message.textContent = 'Your password must be at least 8 characters.';
+        return;
+      }
+
+      if (password.value !== confirmPassword.value) {
+        message.textContent = 'Your passwords do not match.';
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      message.textContent = 'Creating your account...';
+
+      try {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password: password.value,
+          options: {
+            data: { full_name: fullName },
+            emailRedirectTo: window.location.origin +
+              window.location.pathname.replace('signup.html', 'account.html')
+          }
+        });
+
+        if (error) throw error;
+
+        if (data.session) {
+          window.location.href = './account.html';
+          return;
+        }
+
+        message.textContent =
+          'Almost there! Check your email for the confirmation link before signing in.';
+        form.reset();
+      } catch (error) {
+        message.textContent = error.message ||
+          'We could not create your account. Please try again.';
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

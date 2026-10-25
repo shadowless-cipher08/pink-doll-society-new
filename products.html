@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop the Collection | Pink Doll Society</title>
+
+  <meta
+    name="description"
+    content="Discover luxury hair extensions at Pink Doll Society. Shop straight hair, body wave, and deep wave styles."
+  >
+
+  <meta name="theme-color" content="#fff7fb">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/products.css">
+
+  <script src="js/products.js" defer></script>
+</head>
+
+<body class="shop-page">
+
+  <!-- HEADER -->
+  <header class="shop-header">
+    <a class="shop-logo" href="index.html" aria-label="Pink Doll Society home">
+      PINK DOLL <span>SOCIETY</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">HOME</a>
+      <a href="products.html" aria-current="page">SHOP ALL</a>
+      <a href="about.html">OUR STORY</a>
+      <a href="cart.html" class="shop-bag">
+        MY BAG (<span id="cart-count">0</span>)
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="shop-hero">
+      <p class="shop-eyebrow">WELCOME TO YOUR DOLL ERA</p>
+
+      <h1>Shop the <span>Society.</span></h1>
+
+      <p>Your hair. Your rules. Your signature look.</p>
+
+      <a href="#collection" class="shop-hero-button">
+        DISCOVER YOUR LOOK
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="collection-section" id="collection">
+
+      <!-- COLLECTION INTRO -->
+      <div class="collection-intro">
+        <p class="shop-eyebrow">MADE FOR THE DOLLS</p>
+
+        <h2>Find Your Signature Look</h2>
+
+        <p class="collection-description">
+          Sleek strands, gorgeous waves, and main-character energy.
+          Your next favorite look starts here.
+        </p>
+      </div>
+
+      <!-- SEARCH AND FILTERS -->
+      <div class="product-toolbar">
+
+        <div class="product-search-control">
+          <label for="product-search">SEARCH THE COLLECTION</label>
+
+          <div class="search-field">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+
+            <input
+              type="search"
+              id="product-search"
+              placeholder="Find your next favorite..."
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <div class="texture-control">
+          <label for="texture-filter">SHOP BY TEXTURE</label>
+
+          <div class="texture-options">
+            <button
+              type="button"
+              class="texture-button active"
+              data-texture="all"
+              aria-pressed="true"
+            >
+              All Hair
+            </button>
+
+            <button
+              type="button"
+              class="texture-button"
+              data-texture="straight"
+              aria-pressed="false"
+            >
+              Straight
+            </button>
+
+            <button
+              type="button"
+              class="texture-button"
+              data-texture="body-wave"
+              aria-pressed="false"
+            >
+              Body Wave
+            </button>
+
+            <button
+              type="button"
+              class="texture-button"
+              data-texture="deep-wave"
+              aria-pressed="false"
+            >
+              Deep Wave
+            </button>
+          </div>
+
+          <select
+            id="texture-filter"
+            class="visually-hidden"
+            aria-label="Filter by hair texture"
+            tabindex="-1"
+          >
+            <option value="all">All Textures</option>
+            <option value="straight">Straight</option>
+            <option value="body-wave">Body Wave</option>
+            <option value="deep-wave">Deep Wave</option>
+          </select>
+        </div>
+
+        <!-- RESULTS AND SORTING -->
+        <div class="collection-bottom-row">
+          <p id="product-total" aria-live="polite">
+            Preparing your collection...
+          </p>
+
+          <label class="sort-control" for="product-sort">
+            <span>Sort:</span>
+
+            <select id="product-sort">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </label>
+        </div>
+
+      </div>
+
+      <!-- PRODUCTS ARE RENDERED BY JAVASCRIPT -->
+      <div
+        class="product-grid"
+        id="product-grid"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <p class="loading-message">Preparing your collection...</p>
+      </div>
+
+      <noscript>
+        <p class="loading-message">
+          Please enable JavaScript to browse the Pink Doll Society collection.
+        </p>
+      </noscript>
+
+      <!-- DEVELOPMENT NOTICE -->
+      <p class="price-notice" id="development-price-notice">
+        Sample products and prices are for development only.
+        Confirm final prices, lengths, and product details before launch.
+      </p>
+
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="shop-brand-message">
+      <p class="shop-eyebrow">THE PINK DOLL STANDARD</p>
+
+      <h2>Pretty Is a Power Move.</h2>
+
+      <p>
+        The finishing touch. The head-turning moment.
+        The hair that makes the whole look.
+      </p>
+
+      <a href="about.html" class="brand-story-link">
+        GET TO KNOW THE SOCIETY ↗
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="shop-footer">
+
+    <a class="shop-logo" href="index.html">
+      PINK DOLL <span>SOCIETY</span>
+    </a>
+
+    <p>Made for the dolls who set the standard.</p>
+
+    <nav class="shop-footer-links" aria-label="Footer navigation">
+      <a href="about.html">OUR STORY</a>
+      <a href="faq.html">FAQs</a>
+      <a href="shipping.html">SHIPPING &amp; RETURNS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <p>
+      &copy; <span id="footer-year"></span> Pink Doll Society.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- CART FEEDBACK -->
+  <div
+    class="cart-toast"
+    id="cart-toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+</body>
+
+</html>
