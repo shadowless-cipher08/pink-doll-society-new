@@ -1,348 +1,411 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Story | Pink Doll Society</title>
-    <meta name="description"
-        content="Discover the Pink Doll Society aesthetic: luxury hair, feminine style, and unapologetic doll energy.">
+  <title>Our Story | Pink Doll Society</title>
+  <meta name="description" content="Discover Pink Doll Society: luxury-inspired hair, feminine style, and unapologetic doll energy.">
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        .about-page {
-            background: #fff8fc;
-            color: #30202a;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    .about-page {
+      --about-pink: #c34d87;
+      --about-blush: #fff0f7;
+      --about-ink: #30202a;
+      margin: 0;
+      background: #fffafc;
+      color: var(--about-ink);
+      font-family: Arial, sans-serif;
+    }
 
-        .about-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 24px 7%;
-            background: #fff;
-        }
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+      box-sizing: border-box;
+    }
 
-        .about-nav a {
-            color: #30202a;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    .about-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 7%;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #f2dce7;
+    }
 
-        .about-hero {
-            padding: 100px 8%;
-            text-align: center;
-            background: linear-gradient(135deg, #fff0f7, #f4c8df, #fff8fc);
-        }
+    .about-nav a {
+      color: var(--about-ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
 
-        .about-eyebrow {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
+    .about-nav .about-nav-brand {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
 
-        .about-hero h1 {
-            margin: 22px 0;
-            font-family: Georgia, serif;
-            font-size: clamp(44px, 7vw, 82px);
-            font-weight: 400;
-            line-height: 1.1;
-        }
+    .about-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(80px, 12vw, 150px) 8%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(255,255,255,.9), transparent 40%),
+        radial-gradient(ellipse at 85% 80%, rgba(228,142,185,.25), transparent 40%),
+        linear-gradient(135deg, #fff5fa, #f3c7de 55%, #fff9fc);
+    }
 
-        .about-hero h1 span {
-            display: block;
-            color: #bd4d84;
-            font-style: italic;
-        }
+    .about-eyebrow {
+      margin: 0;
+      color: var(--about-pink);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
 
-        .about-intro {
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 16px;
-            line-height: 1.9;
-        }
+    .about-hero h1 {
+      margin: 25px auto;
+      font-family: Georgia, serif;
+      font-size: clamp(45px, 7.5vw, 88px);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -2px;
+    }
 
-        .about-story {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 60px;
-            padding: 90px 10%;
-        }
+    .about-hero h1 span {
+      display: block;
+      color: var(--about-pink);
+      font-style: italic;
+    }
 
-        .about-story-art {
-            display: flex;
-            min-height: 390px;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            background: linear-gradient(145deg, #f5c5dc, #fff0f7, #eeb2d0);
-            text-align: center;
-        }
+    .about-intro {
+      max-width: 630px;
+      margin: 25px auto 0;
+      color: #5e4a56;
+      font-size: 15px;
+      line-height: 1.9;
+    }
 
-        .about-story-art span {
-            color: #7e3159;
-            font-family: Georgia, serif;
-            font-size: clamp(34px, 5vw, 56px);
-            font-style: italic;
-            line-height: 1.2;
-        }
+    .about-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(35px, 6vw, 85px);
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 100px 8%;
+    }
 
-        .about-story-copy h2 {
-            margin: 12px 0 20px;
-            font-family: Georgia, serif;
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 400;
-        }
+    .about-story-art {
+      position: relative;
+      display: flex;
+      min-height: 460px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 35px;
+      background:
+        radial-gradient(ellipse at 25% 20%, rgba(255,255,255,.95), transparent 35%),
+        linear-gradient(145deg, #eeb4d0, #fff0f7 50%, #d985b2);
+      text-align: center;
+    }
 
-        .about-story-copy p {
-            color: #65535e;
-            font-size: 15px;
-            line-height: 1.9;
-        }
+    .about-story-art::before,
+    .about-story-art::after {
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      border: 1px solid rgba(142, 54, 99, .28);
+      content: "";
+      transform: rotate(12deg);
+    }
 
-        .about-values {
-            padding: 75px 8%;
-            background: #2b1d27;
-            color: #fff7fb;
-            text-align: center;
-        }
+    .about-story-art::after {
+      width: 65%;
+      height: 85%;
+      transform: rotate(-12deg);
+    }
 
-        .about-values h2 {
-            margin: 0 0 45px;
-            font-family: Georgia, serif;
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 400;
-        }
+    .about-story-art span {
+      position: relative;
+      z-index: 1;
+      color: #7e3159;
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 4.5vw, 60px);
+      font-style: italic;
+      line-height: 1.18;
+    }
 
-        .about-value-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-        }
+    .about-story-copy h2 {
+      margin: 16px 0 22px;
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 4vw, 53px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
 
-        .about-value-grid article {
-            padding: 25px 15px;
-            border-top: 1px solid #d98bb5;
-        }
+    .about-story-copy p:not(.about-eyebrow) {
+      color: #65535e;
+      font-size: 14px;
+      line-height: 1.95;
+    }
 
-        .about-value-grid h3 {
-            color: #f5b9d7;
-            font-family: Georgia, serif;
-            font-size: 25px;
-            font-weight: 400;
-        }
+    .about-values {
+      padding: 85px 8%;
+      background: #2b1d27;
+      color: #fff7fb;
+      text-align: center;
+    }
 
-        .about-value-grid p {
-            color: #e5d5df;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+    .about-values .about-eyebrow {
+      color: #f2b2d1;
+    }
 
-        .about-cta {
-            padding: 85px 20px;
-            text-align: center;
-        }
+    .about-values h2 {
+      margin: 18px 0 50px;
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 5vw, 52px);
+      font-weight: 400;
+    }
 
-        .about-cta h2 {
-            font-family: Georgia, serif;
-            font-size: clamp(34px, 5vw, 52px);
-            font-weight: 400;
-        }
+    .about-value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-        .about-cta p {
-            margin-bottom: 28px;
-            line-height: 1.8;
-        }
+    .about-value-grid article {
+      padding: 28px 18px;
+      border-top: 1px solid #d98bb5;
+    }
 
-        .about-button {
-            display: inline-block;
-            padding: 17px 28px;
-            background: #bd4d84;
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
+    .about-value-grid h3 {
+      color: #f5b9d7;
+      font-family: Georgia, serif;
+      font-size: 27px;
+      font-weight: 400;
+    }
 
-        .about-button:hover {
-            background: #2b1d27;
-        }
+    .about-value-grid p {
+      color: #e5d5df;
+      font-size: 13px;
+      line-height: 1.9;
+    }
 
-        .about-footer {
-            padding: 24px 7%;
-            background: #fff;
-            color: #6e5867;
-            font-size: 12px;
-            text-align: center;
-        }
+    .about-cta {
+      padding: 95px 7%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 100%, #f9d8e9, transparent 65%),
+        #fffafc;
+    }
 
-        .about-footer a {
-            color: #9f3d6e;
-            text-decoration: none;
-        }
+    .about-cta h2 {
+      margin: 20px 0;
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 5vw, 58px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
 
-        @media (max-width: 700px) {
-            .about-nav {
-                padding: 20px;
-            }
+    .about-cta p:not(.about-eyebrow) {
+      margin: 0 auto 30px;
+      color: #65535e;
+      font-size: 14px;
+      line-height: 1.8;
+    }
 
-            .about-hero {
-                padding: 75px 7%;
-            }
+    .about-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 16px 28px;
+      background: var(--about-pink);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
 
-            .about-story {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                padding: 55px 7%;
-            }
+    .about-button:hover {
+      background: #2b1d27;
+      transform: translateY(-2px);
+    }
 
-            .about-story-art {
-                min-height: 280px;
-            }
+    .about-button:focus-visible,
+    .about-nav a:focus-visible,
+    .about-footer a:focus-visible {
+      outline: 2px solid var(--about-pink);
+      outline-offset: 4px;
+    }
 
-            .about-value-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-        }
-    </style>
+    .about-footer {
+      padding: 25px 7%;
+      border-top: 1px solid #f2dce7;
+      background: #fff;
+      color: #6e5867;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .about-footer a {
+      color: #9f3d6e;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .about-nav {
+        padding: 19px 5%;
+      }
+
+      .about-nav a {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+      }
+
+      .about-nav .about-nav-brand {
+        font-size: 14px;
+      }
+
+      .about-hero {
+        padding: 85px 7%;
+      }
+
+      .about-hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .about-story {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 60px 7%;
+      }
+
+      .about-story-art {
+        min-height: 320px;
+      }
+
+      .about-value-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .about-values {
+        padding: 70px 7%;
+      }
+
+      .about-value-grid article {
+        padding: 18px 12px;
+      }
+
+      .about-cta {
+        padding: 75px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about-button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="about-page">
+  <header class="about-nav">
+    <a class="about-nav-brand" href="index.html">PINK DOLL SOCIETY</a>
+    <a href="cart.html">SHOPPING BAG ↗</a>
+  </header>
 
-    <!-- Navigation -->
-    <header class="about-nav">
-        <a href="index.html">PINK DOLL SOCIETY</a>
-        <a href="cart.html">SHOPPING BAG ↗</a>
-    </header>
+  <main>
+    <section class="about-hero">
+      <p class="about-eyebrow">A little luxury. A lot of attitude.</p>
+      <h1>
+        Meet your new
+        <span>favorite obsession.</span>
+      </h1>
+      <p class="about-intro">
+        Pink Doll Society is a beauty brand built around feminine style,
+        statement hair, and the confidence to own every room you walk into.
+        Your look is your signature. Make it unforgettable.
+      </p>
+    </section>
 
-    <main>
+    <section class="about-story">
+      <div class="about-story-art" aria-label="Your hair. Your rules. Your era.">
+        <span>Your hair.<br>Your rules.<br>Your era.</span>
+      </div>
 
-        <!-- Hero -->
-        <section class="about-hero">
-            <p class="about-eyebrow">A little luxury. A lot of attitude.</p>
-
-            <h1>
-                Meet your new
-                <span>favorite obsession.</span>
-            </h1>
-
-            <p class="about-intro">
-                Pink Doll Society is a beauty brand built around feminine
-                style, statement hair, and the confidence to own every room
-                you walk into. Your look is your signature. Make it unforgettable.
-            </p>
-        </section>
-
-        <!-- Brand Story -->
-        <section class="about-story">
-
-            <div class="about-story-art">
-                <span>
-                    Your hair.<br>
-                    Your rules.<br>
-                    Your era.
-                </span>
-            </div>
-
-            <div class="about-story-copy">
-                <p class="about-eyebrow">THE PINK DOLL PHILOSOPHY</p>
-
-                <h2>More than a look. It's a whole mood.</h2>
-
-                <p>
-                    We believe beauty should feel personal. It should let you
-                    experiment, express yourself, and show up as the version of
-                    yourself you love most.
-                </p>
-
-                <p>
-                    Pink Doll Society brings together a playful pink aesthetic
-                    and a luxury-inspired hair experience for dolls who love
-                    making an entrance.
-                </p>
-
-                <p>
-                    Whether your signature look is sleek and straight, soft
-                    and wavy, or full of volume, your doll era belongs to you.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- Brand Values -->
-        <section class="about-values">
-
-            <p class="about-eyebrow">THE SOCIETY STANDARD</p>
-
-            <h2>Three things we stand for.</h2>
-
-            <div class="about-value-grid">
-
-                <article>
-                    <h3>Confidence</h3>
-                    <p>
-                        Wear the look you love and let your confidence do the talking.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>Individuality</h3>
-                    <p>
-                        Your style should feel like you. Never a copy of somebody else.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>Doll Energy</h3>
-                    <p>
-                        Feminine, expressive, bold, and always true to your own vibe.
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- Shopping Call to Action -->
-        <section class="about-cta">
-
-            <p class="about-eyebrow">YOUR NEXT LOOK STARTS HERE</p>
-
-            <h2>Ready to enter your doll era?</h2>
-
-            <p>
-                Explore the Pink Doll Society hair collection and find your next look.
-            </p>
-
-            <a class="about-button" href="products.html">
-                SHOP THE COLLECTION ↗
-            </a>
-
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="about-footer">
+      <div class="about-story-copy">
+        <p class="about-eyebrow">THE PINK DOLL PHILOSOPHY</p>
+        <h2>More than a look. It's a whole mood.</h2>
         <p>
-            &copy; 2026 Pink Doll Society.
-            <a href="index.html">Back to Home</a>
-            &nbsp;|&nbsp;
-            <a href="contact.html">Contact Us</a>
+          We believe beauty should feel personal. It should let you experiment,
+          express yourself, and show up as the version of yourself you love most.
         </p>
-    </footer>
+        <p>
+          Pink Doll Society brings together a playful pink aesthetic and a
+          luxury-inspired hair experience for dolls who love making an entrance.
+        </p>
+        <p>
+          Whether your signature look is sleek and straight, soft and wavy,
+          or full of volume, your doll era belongs to you.
+        </p>
+      </div>
+    </section>
 
+    <section class="about-values">
+      <p class="about-eyebrow">THE SOCIETY STANDARD</p>
+      <h2>Three things we stand for.</h2>
+
+      <div class="about-value-grid">
+        <article>
+          <h3>Confidence</h3>
+          <p>Wear the look you love and let your confidence do the talking.</p>
+        </article>
+        <article>
+          <h3>Individuality</h3>
+          <p>Your style should feel like you. Never a copy of somebody else.</p>
+        </article>
+        <article>
+          <h3>Doll Energy</h3>
+          <p>Feminine, expressive, bold, and always true to your own vibe.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <p class="about-eyebrow">YOUR NEXT LOOK STARTS HERE</p>
+      <h2>Ready to enter your doll era?</h2>
+      <p>Explore the Pink Doll Society hair collection and find your next look.</p>
+      <a class="about-button" href="products.html">
+        SHOP THE COLLECTION <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="about-footer">
+    <p>
+      &copy; 2026 Pink Doll Society.
+      <a href="index.html">Back to Home</a>
+      &nbsp;|&nbsp;
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
 </body>
-
 </html>
